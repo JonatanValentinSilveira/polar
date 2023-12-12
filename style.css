@@ -1,0 +1,220 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #222;
+  background-color: #dfdfdf;
+}
+
+
+
+/* HEADER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nav {
+  position: fixed;
+  background-color: #2b67c0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  transition: all 0.3s ease-in-out;
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: center;
+}
+.nav a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px 18px;
+  transition: all 0.3s ease-in-out;
+}
+.nav.active {
+  background-color:#2bafc0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.nav.active a {
+  color: #ffffff;
+}
+.nav.active .container {
+  padding: 10px 0;
+}
+.nav a.current,
+.nav a:hover {
+  color: #000000;
+  font-weight: bold;
+}
+
+
+/*BACKGRAUND e TITULO */
+.hero {
+  background-image: url(img/urso-andando1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  height: 100vh;
+  
+  -display: flex;
+  -justify-content: center;
+  -align-items: center;
+  -text-align:center ;
+  -position: relative;
+  -margin-bottom: 20px;
+  -z-index: -2;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  --background-color: rgba(231, 19, 19, 0.5);
+  z-index: -1;
+}
+.hero h1 {
+  font-size: 66px;
+  color: #086285;
+  padding-top: 235px;
+  padding-left: 50px;
+}
+.hero h2 {
+  font-size: 36px;
+  color: #068fc5;
+  letter-spacing: 1px;
+  padding-left: 50px;
+}
+
+
+/*TEXTOS*/
+.titulo-container { /* h1 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titulo-container h1 {
+  padding-top:30px;
+  padding-left: 70px;
+  padding-right: 70px;
+  text-align: justify;
+}
+.paragrafo-container { /* paragrafos  e h3 */
+  margin-top: 10px;
+  padding-left: 70px;
+  padding-right: 90px;
+  text-align: justify ;
+}
+.paragrafo-container p {
+  margin-bottom: 9px; /* Adicione o espaço desejado entre os parágrafos */
+}
+.paragrafo-container h3 {
+  margin-top: 15px; /* Adicione o espaço desejado entre os parágrafos */
+}
+
+hr { /*linnha-horizontal*/
+  border-top: 2px solid #0a4188;
+  margin-left: 70px;
+  padding-top: 1px;
+  margin-top: 10px;
+  width:86%
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  background-color: #436aa5;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 83px; 
+  margin-top: 65px; 
+}
+
+.maisTexto {
+  display: none;
+}
+
+.maisTexto.mostrar {
+  display: inline; /* Altere para o modo de exibição padrão quando a classe mostrar for adicionada */
+}
+
+
+/*distribuição*/
+.coluna {
+  display: flex;
+}
+.texto {
+  flex: 1;
+  margin-right: 20px;
+}
+.imagem {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*CARROSSEL*/
+#carrssel {
+  margin-top: 50px;
+}
+.carrossel {
+  display: flex;
+  width: 90vw;
+}
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+.panel h3 {
+  -font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
